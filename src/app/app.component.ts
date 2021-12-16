@@ -11,9 +11,5 @@ export class AppComponent {
 
   constructor(
     private ps: PeliculasService
-  ) {
-    ps.getPopulares().subscribe(res => {
-      console.log(res);
-    });
-  }
+  ) { }
 }

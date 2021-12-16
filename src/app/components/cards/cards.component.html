@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 g-4" data-masonry='{"percentPosition": true }'>
+
+        <div class="card mb-3" *ngFor="let p of lista">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + p.backdrop_path" class="card-img-top">
+            <div class="card-img-overlay">
+                <h5 class="card-title">{{ p.original_title }}</h5>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
