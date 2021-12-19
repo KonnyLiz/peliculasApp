@@ -22,4 +22,8 @@ export class CardsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  viewDetails(id: number){
+    console.log(id);
+  }
+
 }

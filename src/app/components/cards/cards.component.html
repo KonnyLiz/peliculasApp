@@ -1,14 +1,22 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2 g-4" data-masonry='{"percentPosition": true }'>
 
-        <div class="card mb-3" *ngFor="let p of lista">
-            <img [src]="'https://image.tmdb.org/t/p/w500' + p.backdrop_path" class="card-img-top">
-            <div class="card-img-overlay">
-                <h5 class="card-title">{{ p.original_title }}</h5>
-                <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
+        <div class="card mb-3" *ngFor="let p of lista" (click)="viewDetails(p.id)">
+            <img [src]="'https://image.tmdb.org/t/p/w300' + p.poster_path" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ p.title }} </h5>
+                <p class="text-muted">
+                    Release: {{ p.release_date | date: 'dd-MMM-yy'}}
+                    <br>
+                    Original language: {{ p.original_language }}
                 </p>
+                <p class="card-text">
+                    {{ p.overview }}
+                </p>
+                <span class="badge rounded-pill bg-primary" *ngFor="let g of p.genre_ids">
+                    {{ g }}
+                </span>
+
             </div>
         </div>
 
