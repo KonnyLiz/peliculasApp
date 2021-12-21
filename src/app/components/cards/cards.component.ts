@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PeliculasLista } from 'src/app/models/peliculas.interface';
 import { PeliculasService } from 'src/app/services/peliculas.service';
 
@@ -11,7 +12,8 @@ export class CardsComponent implements OnInit {
 
   lista: PeliculasLista[] = [];
   constructor(
-    private _ps: PeliculasService
+    private _ps: PeliculasService,
+    private route: Router
   ) {
     _ps.getPopulares().subscribe(res => {
       console.log(res);
@@ -24,6 +26,7 @@ export class CardsComponent implements OnInit {
 
   viewDetails(id: number){
     console.log(id);
+    this.route.navigate(['/detalle', id]);
   }
 
 }

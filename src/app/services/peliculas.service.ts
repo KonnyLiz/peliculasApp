@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { PeliculaDetalle } from '../models/pelicula-detalle.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,12 @@ export class PeliculasService {
     );
   }
 
+  getDetallePelicula(id: number){
+    const getUrl = `${this.URL}/movie/${id}?api_key=${this.apiKey}`;
+
+    return this.http.get(getUrl).pipe(
+      map((res: any) => res)
+    );
+  }
 
 }
