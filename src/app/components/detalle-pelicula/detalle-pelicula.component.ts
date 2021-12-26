@@ -18,7 +18,7 @@ export class DetallePeliculaComponent implements OnInit {
   ) {
     this.actRoute.params.subscribe(id => {
       _ps.getDetallePelicula(id['id']).subscribe(res => {
-        
+
         this.detalle = res;
         console.log(this.detalle);
       })
@@ -26,6 +26,10 @@ export class DetallePeliculaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  verGenero(id: number) {
+    console.log(id);
   }
 
 }

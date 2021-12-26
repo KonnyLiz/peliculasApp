@@ -1,3 +1,62 @@
-<div class="bg-image shadow">
-    <img  [src]="'https://image.tmdb.org/t/p/w500' + detalle?.backdrop_path" class="img-fluid shadow-2-strong">
+<div class="text-start">
+
+    <button class="btn btn-outline-danger col-sm-2 mt-2" [routerLink]="['/home']">
+        <i class="fa fa-long-arrow-alt-left"></i>
+        Regresar
+    </button>
+</div>
+
+<div class="row mt-4">
+    <div class="col-4">
+        <div class="bg-image">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + detalle?.poster_path" class="img-fluid" width="100%">
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h5 class="card-title">{{ detalle?.title }}</h5>
+                        <div class="justify-content-around">
+                            <span class="badge rounded-pill bg-danger col-sm-auto" *ngFor="let g of detalle?.genres"
+                                (click)="verGenero(g.id)">
+                                {{ g.name }}
+                            </span>
+                        </div>
+                        <p class="card-text">
+                            {{ detalle?.overview }}
+                        </p>
+                        <div class="row text-center text-muted">
+                            <div class="col">
+                                Popularity: <br>
+                                <span class="badge rounded-pill bg-secondary">
+                                    {{ detalle?.popularity }}
+                                </span>
+                            </div>
+                            <div class="col">
+                                Original language: <br>
+                                <span class="badge rounded-pill bg-secondary">
+                                    {{ detalle?.original_language }}
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Poducer:</h6>
+                        <div class="row">
+                           <button class="btn btn-outline-secondary col-auto" *ngFor="let pro of detalle?.production_companies">
+                            {{ pro.name }}
+                           </button>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="card-footer">
+                <a [href]="detalle?.homepage">Oficial site</a>
+            </div>
+        </div>
+    </div>
+
 </div>

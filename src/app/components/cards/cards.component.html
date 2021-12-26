@@ -2,13 +2,11 @@
     <div class="row row-cols-1 row-cols-md-2 g-4" data-masonry='{"percentPosition": true }'>
 
         <div class="card mb-3" *ngFor="let p of lista" (click)="viewDetails(p.id)">
-            <img [src]="'https://image.tmdb.org/t/p/w300' + p.poster_path" class="card-img-top">
+            <img [src]="'https://image.tmdb.org/t/p/w300' + p.poster_path" class="card-img-top" width="100%">
             <div class="card-body">
                 <h5 class="card-title">{{ p.title }} </h5>
                 <p class="text-muted">
-                    Release: {{ p.release_date | date: 'dd-MMM-yy'}}
-                    <br>
-                    Original language: {{ p.original_language }}
+                    {{ p.release_date | date: 'dd-MMM-yy'}}
                 </p>
                 <p class="card-text">
                     {{ p.overview }}
