@@ -1,8 +1,22 @@
-<div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
+<div class="container mt-3">
+  <div class="alert alert-info text-center" role="alert" *ngIf="lista.length < 1 && cargando">
+    <i class="fa fa-info fa-2x"></i>
+    <h5>
+      Cargando...
+    </h5>
   </div>
 
-  <app-cards [items]="lista"></app-cards>
+  <div class="alert alert-warning text-center" role="alert" *ngIf="lista.length < 1 && !cargando">
+    <i class="fa fa-exclamation fa-2x"></i>
+    <h5>
+      No se encontraron resultados.
+    </h5>
+  </div>
 
+  <div class="mb-3">
+    <h5>Buscar</h5>
+    <input type="text" id="txt" #txt class="form-control" (keyup)="buscar(txt.value)">
+  </div>
 
-  
+  <app-cards [items]="lista" *ngIf="lista.length > 0 && !cargando"></app-cards>
+</div>

@@ -11,20 +11,28 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 })
 export class BuscarComponent implements OnInit {
   lista: PeliculasLista[] = [];
+  cargando: boolean;
 
   constructor(
     private _ps: PeliculasService,
     private actRoute: ActivatedRoute
   ) {
+    this.cargando = true;
     actRoute.params.subscribe(txt => {
-      _ps.getBuscar(txt['txt']).subscribe((res) => {
-        this.lista = res.results;
-        console.log(res.results);
-      });
+      this.buscar(txt['txt']);
+      this.cargando = false;
     });
   }
 
   ngOnInit(): void {
+  }
+
+  buscar(txt: string){
+    this.cargando = true;
+    this._ps.getBuscar(txt).subscribe((res) => {
+      this.lista = res.results;
+      this.cargando = false;
+    });
   }
 
 }
