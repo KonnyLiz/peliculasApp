@@ -9,7 +9,8 @@
                     {{ p.release_date | date: 'dd-MMM-yy'}}
                 </p>
                 <p class="card-text">
-                    {{ p.overview }}
+                    {{ p.overview | slice: 0:150 }}... 
+                    <a [routerLink]="['/detalle', p.id ]">Read more</a>
                 </p>
                 <span class="badge rounded-pill bg-primary" *ngFor="let g of p.genre_ids">
                     {{ g }}
