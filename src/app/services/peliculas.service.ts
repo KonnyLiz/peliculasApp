@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { PeliculaDetalle } from '../models/pelicula-detalle.interface';
+import { Resultados } from '../models/resultados.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,12 @@ export class PeliculasService {
     return this.http.get(getUrl).pipe(
       map((res: any) => res)
     );
+  }
+
+  getBuscar(txt: string){
+    // https://api.themoviedb.org/3/search/movie?api_key=031e4d235f0ff6b16911ae1ef0934509&language=en-US&query=eva&page=1&include_adult=false
+    const query = `${this.URL}/search/movie?query=${txt}&api_key=${this.apiKey}&language=en-US&page=1&include_adult=false`;
+    return this.http.get<Resultados>(query);
   }
 
 }

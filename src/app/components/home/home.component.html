@@ -1,3 +1,8 @@
 <div class="container-fluid mt-3">
-    <app-cards></app-cards>
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active"><a href="#">Home</a></li>
+        </ol>
+      </nav>
+    <app-cards [items]="lista"></app-cards>
 </div>

@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
 import { HomeComponent } from './components/home/home.component';
+import { BuscarComponent } from './components/buscar/buscar.component';
+import { NoImagePipe } from './pipes/no-image.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { HomeComponent } from './components/home/home.component';
     CardsComponent,
     DetallePeliculaComponent,
     HomeComponent,
+    BuscarComponent,
+    NoImagePipe,
   ],
   imports: [
     BrowserModule,

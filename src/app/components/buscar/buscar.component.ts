@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculasLista } from 'src/app/models/peliculas.interface';
+import { Resultados } from 'src/app/models/resultados.interface';
 import { PeliculasService } from 'src/app/services/peliculas.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-buscar',
+  templateUrl: './buscar.component.html',
+  styleUrls: ['./buscar.component.css']
 })
-export class HomeComponent implements OnInit {
+export class BuscarComponent implements OnInit {
   lista: PeliculasLista[] = [];
 
   constructor(
     private _ps: PeliculasService
   ) {
-    _ps.getPopulares().subscribe(res => {
-      console.log(res);
-      this.lista = res;
+    _ps.getBuscar('evan').subscribe((res) => {
+      this.lista = res.results;
+      console.log(res.results);
     });
   }
 
