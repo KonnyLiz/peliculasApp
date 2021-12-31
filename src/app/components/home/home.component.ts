@@ -14,9 +14,10 @@ export class HomeComponent implements OnInit {
     private _ps: PeliculasService
   ) {
     _ps.getPopulares().subscribe(res => {
-      console.log(res);
       this.lista = res;
     });
+
+    _ps.getCatelera();
   }
 
   ngOnInit(): void {

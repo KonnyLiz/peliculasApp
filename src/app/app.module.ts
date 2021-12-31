@@ -11,6 +11,7 @@ import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-
 import { HomeComponent } from './components/home/home.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { GridComponent } from './components/grid/grid.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NoImagePipe } from './pipes/no-image.pipe';
     HomeComponent,
     BuscarComponent,
     NoImagePipe,
+    GridComponent,
   ],
   imports: [
     BrowserModule,

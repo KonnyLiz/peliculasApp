@@ -1,8 +1,13 @@
 <div class="container-fluid mt-3">
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item active"><a href="#">Home</a></li>
-        </ol>
-      </nav>
+      <h3>
+        Peliculas App
+      </h3>
+
+      <!-- get cartelera segun fechas -->
+      <app-grid></app-grid>
+
+      <!-- get discover -->
     <app-cards [items]="lista"></app-cards>
+
+    
 </div>

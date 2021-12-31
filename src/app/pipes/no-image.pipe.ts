@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class NoImagePipe implements PipeTransform {
 
   transform(value: string | undefined, position: string): string {
-    console.log(value);
     if (value != null || value != undefined) {
       return 'https://image.tmdb.org/t/p/w400' + value;
     } else {
