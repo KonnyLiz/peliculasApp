@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PeliculasLista } from 'src/app/models/peliculas.interface';
 
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
-export class GridComponent implements OnInit {
+export class GridComponent {
 
-  constructor() { }
+  @Input() items: PeliculasLista[] = [];
 
-  ngOnInit(): void {
+  constructor(
+    private route: Router
+  ) { }
+
+  viewDetails(id: number) {
+    console.log(id);
+    this.route.navigate(['/detalle', id]);
   }
 
 }

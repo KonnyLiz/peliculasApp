@@ -9,6 +9,7 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 })
 export class HomeComponent implements OnInit {
   lista: PeliculasLista[] = [];
+  cartelera: PeliculasLista[] = [];
 
   constructor(
     private _ps: PeliculasService
@@ -17,7 +18,9 @@ export class HomeComponent implements OnInit {
       this.lista = res;
     });
 
-    _ps.getCatelera();
+    _ps.getCatelera().subscribe(res => {
+      this.cartelera = res;
+    });
   }
 
   ngOnInit(): void {

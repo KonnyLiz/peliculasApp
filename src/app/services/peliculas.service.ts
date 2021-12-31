@@ -37,12 +37,15 @@ export class PeliculasService {
     hasta.setDate(hasta.getDate() + 7);
 
     // lo pasamos al formato 2021-12-30
+    // moment es una libreria js para dar formato a fechas y trabajar con tiempos facilmente
     let desdeStr = moment(desde).format('YYYY-MM-DD');
     let hastaStr = moment(hasta).format('YYYY-MM-DD');
     
     const getUrl = `${this.URL}/discover/movie?primary_release_date.gte=${desdeStr}&primary_release_date.lte=${hastaStr}&api_key=${this.apiKey}`;
 
-    return this.http.get(getUrl).subscribe(res => console.log(res));
+    return this.http.get(getUrl).pipe(
+      map((res: any) => res['results'])
+    );
   }
 
   getDetallePelicula(id: number) {
