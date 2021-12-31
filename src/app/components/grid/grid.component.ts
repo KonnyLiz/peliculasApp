@@ -16,7 +16,6 @@ export class GridComponent {
   ) { }
 
   viewDetails(id: number) {
-    console.log(id);
     this.route.navigate(['/detalle', id]);
   }
 
