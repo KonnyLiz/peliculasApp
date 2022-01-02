@@ -11,17 +11,17 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 export class DetallePeliculaComponent implements OnInit {
 
   detalle?: PeliculaDetalle;
-
+  after: string = '';
   constructor(
     private _ps: PeliculasService,
     private actRoute: ActivatedRoute
   ) {
-    this.actRoute.params.subscribe(id => {
-      _ps.getDetallePelicula(id['id']).subscribe(res => {
+    this.actRoute.params.subscribe(params => {
+      this.after = params['page'];
 
+      _ps.getDetallePelicula(params['id']).subscribe(res => {
         this.detalle = res;
-        console.log(this.detalle);
-      })
+      });
     });
   }
 

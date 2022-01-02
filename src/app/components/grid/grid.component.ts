@@ -17,7 +17,7 @@ export class GridComponent {
   ) { }
 
   viewDetails(id: number) {
-    this.route.navigate(['/detalle', id]);
+    this.route.navigate(['/detalle', id, 'home']);
   }
 
 }

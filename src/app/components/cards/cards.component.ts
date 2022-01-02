@@ -17,7 +17,7 @@ export class CardsComponent {
 
   viewDetails(id: number) {
     console.log(id);
-    this.route.navigate(['/detalle', id]);
+    this.route.navigate(['/detalle', id, '/buscar']);
   }
 
 }

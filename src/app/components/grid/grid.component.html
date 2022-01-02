@@ -7,16 +7,16 @@
     <div class="row" *ngIf="items">
         <div class="col-sm-6">
             <div class="row">
-                <div class="col-md-12 div-pic-1"
+                <div class="col-md-12 div-pic-1" (click)="viewDetails(items[0].id)"
                     [ngStyle]="{'background-image': 'url('+ (items[0] | noImageGrid) +')'}">
 
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm div-pic-2" [ngStyle]="{'background-image': 'url('+ (items[1] | noImageGrid) +')'}">
+                <div class="col-sm div-pic-2" (click)="viewDetails(items[1].id)" [ngStyle]="{'background-image': 'url('+ (items[1] | noImageGrid) +')'}">
 
                 </div>
-                <div class="col-sm div-pic-2" [ngStyle]="{'background-image': 'url('+ (items[2] | noImageGrid) +')'}">
+                <div class="col-sm div-pic-2" (click)="viewDetails(items[2].id)" [ngStyle]="{'background-image': 'url('+ (items[2] | noImageGrid) +')'}">
 
                 </div>
             </div>
@@ -25,16 +25,16 @@
 
         <div class="col-sm-6">
             <div class="row">
-                <div class="col-sm div-pic-2" [ngStyle]="{'background-image': 'url('+ (items[3] | noImageGrid) +')'}">
+                <div class="col-sm div-pic-2" (click)="viewDetails(items[3].id)" [ngStyle]="{'background-image': 'url('+ (items[3] | noImageGrid) +')'}">
 
                 </div>
-                <div class="col-sm div-pic-2" [ngStyle]="{'background-image': 'url('+ (items[4] | noImageGrid) +')'}">
+                <div class="col-sm div-pic-2" (click)="viewDetails(items[4].id)" [ngStyle]="{'background-image': 'url('+ (items[4] | noImageGrid) +')'}">
 
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-12 div-pic-1"
+                <div class="col-md-12 div-pic-1" (click)="viewDetails(items[5].id)"
                     [ngStyle]="{'background-image': 'url('+ (items[5] | noImageGrid) +')'}">
 
                 </div>
