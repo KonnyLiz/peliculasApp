@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { GridComponent } from './components/grid/grid.component';
+import { NoImageGridPipe } from './pipes/no-image-grid.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { GridComponent } from './components/grid/grid.component';
     BuscarComponent,
     NoImagePipe,
     GridComponent,
+    NoImageGridPipe,
   ],
   imports: [
     BrowserModule,

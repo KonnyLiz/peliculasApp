@@ -1,5 +1,48 @@
-<div class="row">
-    <div class="col-md-6">
-        
+<!-- show the grid only items is not empty -->
+<!-- So not error for items indefined -->
+
+<h4>Billboard</h4>
+<hr>
+
+<div class="row" *ngIf="items">
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-md-12 div-pic-1"
+                [ngStyle]="{'background-image': 'url('+ (items[0] | noImageGrid) +')'}">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm div-pic-2"
+                [ngStyle]="{'background-image': 'url('+ (items[1] | noImageGrid) +')'}">
+
+            </div>
+            <div class="col-sm div-pic-2"
+                [ngStyle]="{'background-image': 'url('+ (items[2] | noImageGrid) +')'}">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm div-pic-2"
+                [ngStyle]="{'background-image': 'url('+ (items[3] | noImageGrid) +')'}">
+
+            </div>
+            <div class="col-sm div-pic-2"
+                [ngStyle]="{'background-image': 'url('+ (items[4] | noImageGrid) +')'}">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 div-pic-1"
+                [ngStyle]="{'background-image': 'url('+ (items[5] | noImageGrid) +')'}">
+
+            </div>
+        </div>
+
     </div>
 </div>

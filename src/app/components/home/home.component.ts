@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
 
     _ps.getCatelera().subscribe(res => {
       this.cartelera = res;
+      console.log(res);
     });
   }
 
