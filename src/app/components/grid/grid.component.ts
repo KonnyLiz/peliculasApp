@@ -10,6 +10,7 @@ import { PeliculasLista } from 'src/app/models/peliculas.interface';
 export class GridComponent {
 
   @Input() items: PeliculasLista[] = [];
+  @Input() title = '';
 
   constructor(
     private route: Router

@@ -4,10 +4,16 @@
   </h3>
 
   <!-- get billboard by dates -->
-  <app-grid [items]="cartelera"></app-grid>
+  <!-- show the first three of array-->
+  <app-grid [title]="'Billboard'" [items]="cartelera | slice:0:6"></app-grid>
+
+  <!-- show most popular movies -->
+  <app-grid [title]="'Popular'" [items]="lista"></app-grid>
+
+  <!-- show the kids movies -->
+  <app-grid [title]="'Kids'" [items]="kids"></app-grid>
 
   <!-- get discover -->
-  <app-cards [items]="lista"></app-cards>
-
+  <!-- <app-cards [items]="lista"></app-cards> -->
 
 </div>

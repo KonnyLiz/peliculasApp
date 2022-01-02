@@ -28,6 +28,16 @@ export class PeliculasService {
     );
   }
 
+  getPopularKids() {
+    // le agregamos callback=test para decirle a tmdb que queremos usar jsonp para las petivions
+    // solamente devuelve respuesta al usar jsonp
+    const getUrl = `${this.URL}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apiKey}`;
+
+    return this.http.get(getUrl).pipe(
+      map((res: any) => res['results'])
+    );
+  }
+
   getCatelera() {
     // /discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22
     let desde = new Date();

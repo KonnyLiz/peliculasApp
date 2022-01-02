@@ -10,6 +10,7 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 export class HomeComponent implements OnInit {
   lista: PeliculasLista[] = [];
   cartelera: PeliculasLista[] = [];
+  kids: PeliculasLista[] = [];
 
   constructor(
     private _ps: PeliculasService
@@ -20,7 +21,10 @@ export class HomeComponent implements OnInit {
 
     _ps.getCatelera().subscribe(res => {
       this.cartelera = res;
-      console.log(res);
+    });
+
+    _ps.getPopularKids().subscribe(res => {
+      this.kids = res;
     });
   }
 
