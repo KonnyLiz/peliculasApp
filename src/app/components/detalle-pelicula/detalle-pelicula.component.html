@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="row mt-4">
+<div class="row mt-4" *ngIf="detalle">
     <div class="col-4">
         <div class="bg-image">
             <img [src]="detalle?.poster_path | noImage: 'portrait'" class="img-fluid" width="100%">
@@ -43,7 +43,7 @@
                             <div class="col">
                                 Popularity: <br>
                                 <span class="badge rounded-pill bg-secondary">
-                                    {{ detalle?.popularity }}
+                                    {{ detalle?.popularity | number: '.0-0'}}/10
                                 </span>
                             </div>
                             <div class="col">
